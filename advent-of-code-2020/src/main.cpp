@@ -1,0 +1,21 @@
+#include <iostream>
+#include <stdexcept>
+
+// Forward declare functions for each day
+void day_1_part_1();
+void day_1_part_2();
+
+int main()
+{
+	try
+	{
+		day_1_part_1();
+		day_1_part_2();
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+	}
+
+	return 0;
+}
