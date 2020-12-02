@@ -37,7 +37,7 @@ void day_1_part_1()
 			if (i != j && input[i] + input[j] == 2020)
 			{
 				found_solution = true;
-				std::cout << input[i] * input[j] << '\n';
+				std::cout << "Day 1 part 1 | " << input[i] * input[j] << '\n';
 			}
 		}
 	}
@@ -59,7 +59,7 @@ void day_1_part_2()
 				if (i != j && j != k && input[i] + input[j] + input[k] == 2020)
 				{
 					found_solution = true;
-					std::cout << input[i] * input[j] * input[k] << '\n';
+					std::cout << "Day 1 part 2 | " << input[i] * input[j] * input[k] << '\n';
 				}
 			}
 		}
