@@ -6,6 +6,8 @@ void day_1_part_1();
 void day_1_part_2();
 void day_2_part_1();
 void day_2_part_2();
+void day_3_part_1();
+void day_3_part_2();
 
 int main()
 {
@@ -13,8 +15,10 @@ int main()
 	{
 		//day_1_part_1();
 		//day_1_part_2();
-		day_2_part_1();
-		day_2_part_2();
+		//day_2_part_1();
+		//day_2_part_2();
+		day_3_part_1();
+		day_3_part_2();
 	}
 	catch (std::exception& e)
 	{
