@@ -18,14 +18,34 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_1.cpp">
+    <ClCompile Include="src\day_4\day_4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_2.cpp">
+    <ClCompile Include="src\day_4\Passport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_3.cpp">
+    <ClCompile Include="src\day_1\day_1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_2\day_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_3\day_3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_5\day_5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\day_4\Passport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input\day_1.txt" />
+    <Text Include="input\day_2.txt" />
+    <Text Include="input\day_3.txt" />
+    <Text Include="input\day_4.txt" />
   </ItemGroup>
 </Project>

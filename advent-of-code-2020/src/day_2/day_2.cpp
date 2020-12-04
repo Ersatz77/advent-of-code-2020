@@ -22,7 +22,7 @@ static bool end_of_file(std::ifstream& ifs)
 
 void day_2_part_1()
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\input\\day_2.txt";
+	std::string path = "D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_2.txt";
 	std::ifstream file(path);
 	if (!file)
 	{
@@ -64,7 +64,7 @@ void day_2_part_1()
 
 void day_2_part_2()
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\input\\day_2.txt";
+	std::string path = "D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_2.txt";
 	std::ifstream file(path);
 	if (!file)
 	{

@@ -12,8 +12,14 @@ struct Coord
 };
 
 // Parse file to create a vector of all coordinate points
-static std::vector<Coord> create_coords(std::ifstream& file)
+static std::vector<Coord> create_coords(const std::string& path)
 {
+	std::ifstream file(path);
+	if (!file)
+	{
+		throw std::runtime_error("Unable to open file: " + path);
+	}
+
 	std::vector<Coord> coords;
 	int coord_y = 0;
 	for (std::string line; std::getline(file, line); )
@@ -78,30 +84,15 @@ static int num_trees_for_slope(const std::vector<Coord>& coords, int step_x, int
 
 void day_3_part_1()
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\input\\day_3.txt";
-	std::ifstream file(path);
+	std::vector<Coord> coords = create_coords("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_3.txt");
 
-	if (!file)
-	{
-		throw std::runtime_error("Unable to open file: " + path);
-	}
-
-	
-	std::vector<Coord> coords = create_coords(file);
 	std::cout << "Day 3 part 1 | Number of trees in path: " << num_trees_for_slope(coords, 3, 1) << '\n';
 }
 
 void day_3_part_2()
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\input\\day_3.txt";
-	std::ifstream file(path);
+	std::vector<Coord> coords = create_coords("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_3.txt");
 
-	if (!file)
-	{
-		throw std::runtime_error("Unable to open file: " + path);
-	}
-
-	std::vector<Coord> coords = create_coords(file);
 	int slope_1 = num_trees_for_slope(coords, 1, 1);
 	int slope_2 = num_trees_for_slope(coords, 3, 1);
 	int slope_3 = num_trees_for_slope(coords, 5, 1);

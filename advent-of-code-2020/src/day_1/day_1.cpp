@@ -26,7 +26,7 @@ static std::vector<int> get_input(const std::string& path)
 void day_1_part_1()
 {
 	// Get input from file
-	std::vector<int> input = get_input("D:\\Repositories\\advent-of-code-2020\\input\\day_1.txt");
+	std::vector<int> input = get_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_1.txt");
 
 	// Brute force adding values until we find 2 that add up to 2020
 	bool found_solution = false;
@@ -46,7 +46,7 @@ void day_1_part_1()
 void day_1_part_2()
 {
 	// Get input from file
-	std::vector<int> input = get_input("D:\\Repositories\\advent-of-code-2020\\input\\day_1.txt");
+	std::vector<int> input = get_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_1.txt");
 
 	// Brute force adding values until we find 3 that add up to 2020
 	bool found_solution = false;
