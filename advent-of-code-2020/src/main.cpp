@@ -16,6 +16,7 @@ void day_4_part_2();
 
 void day_5_part_1();
 void day_5_part_2();
+void day_5_v2();
 
 void day_6_part_1();
 void day_6_part_2();
@@ -38,6 +39,7 @@ int main()
 
 		day_5_part_1();
 		day_5_part_2();
+		//day_5_v2();
 
 		day_6_part_1();
 		day_6_part_2();
