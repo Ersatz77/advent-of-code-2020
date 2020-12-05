@@ -4,7 +4,7 @@
 #include <vector>
 #include <stdexcept>
 
-static std::vector<int> get_input(const std::string& path)
+std::vector<int> get_input(const std::string& path)
 {
 	// Create input file stream
 	std::ifstream file(path);

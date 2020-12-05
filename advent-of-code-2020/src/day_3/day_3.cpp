@@ -12,7 +12,7 @@ struct Coord
 };
 
 // Parse file to create a vector of all coordinate points
-static std::vector<Coord> create_coords(const std::string& path)
+std::vector<Coord> create_coords(const std::string& path)
 {
 	std::ifstream file(path);
 	if (!file)
@@ -36,7 +36,7 @@ static std::vector<Coord> create_coords(const std::string& path)
 }
 
 // Finds a coord in a vector that matches the X and Y of the arguments and returns true if there's a tree there
-static bool has_tree_at_pos(const std::vector<Coord>& coords, int x, int y)
+bool has_tree_at_pos(const std::vector<Coord>& coords, int x, int y)
 {
 	for (const Coord& c : coords)
 	{
@@ -50,7 +50,7 @@ static bool has_tree_at_pos(const std::vector<Coord>& coords, int x, int y)
 }
 
 // Calculates the number of trees in a given slope
-static int num_trees_for_slope(const std::vector<Coord>& coords, int step_x, int step_y)
+int num_trees_for_slope(const std::vector<Coord>& coords, int step_x, int step_y)
 {
 	constexpr int max_x = 30;
 	constexpr int max_y = 322;

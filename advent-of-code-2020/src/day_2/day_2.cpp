@@ -5,7 +5,7 @@
 #include <stdexcept>
 
 // Returns true if we're at the end of the file
-static bool end_of_file(std::ifstream& ifs)
+bool end_of_file(std::ifstream& ifs)
 {
 	char c = ' ';
 	ifs >> c;

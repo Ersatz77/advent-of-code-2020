@@ -7,7 +7,7 @@
 #include <vector>
 #include <stdexcept>
 
-static std::vector<Passport> create_passports(const std::string& path)
+std::vector<Passport> create_passports(const std::string& path)
 {
 	std::ifstream file(path);
 	if (!file)
