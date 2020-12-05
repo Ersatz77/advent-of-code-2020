@@ -68,14 +68,7 @@ static int num_trees_for_slope(const std::vector<Coord>& coords, int step_x, int
 
 		//std::cout << x << ' ' << y << " | " << num_trees << '\n';
 
-		// Wrap x coords if they go out of bounds
-		x += step_x;
-		if (x > max_x)
-		{
-			// We subtract 31 instead of 30 so the numbers wrap correctly
-			x -= max_x + 1;
-		}
-
+		x = (x + step_x) % (max_x + 1);
 		y += step_y;
 	}
 
