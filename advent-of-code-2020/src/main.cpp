@@ -21,6 +21,9 @@ void day_5_v2();
 void day_6_part_1();
 void day_6_part_2();
 
+void day_7_part_1();
+void day_7_part_2();
+
 int main()
 {
 	try
@@ -43,6 +46,9 @@ int main()
 
 		day_6_part_1();
 		day_6_part_2();
+
+		day_7_part_1();
+		day_7_part_2();
 	}
 	catch (std::exception& e)
 	{
