@@ -51,12 +51,18 @@
     <ClCompile Include="src\day_9\day_9.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_8\Instruction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\day_8\Console.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_8\Instruction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,3 +1,4 @@
+#include "Instruction.h"
 #include "Console.h"
 
 #include <iostream>
