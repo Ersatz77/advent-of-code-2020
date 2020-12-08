@@ -159,11 +159,14 @@
     <ClCompile Include="src\day_5\day_5.cpp" />
     <ClCompile Include="src\day_6\day_6.cpp" />
     <ClCompile Include="src\day_7\day_7.cpp" />
+    <ClCompile Include="src\day_8\Console.cpp" />
     <ClCompile Include="src\day_8\day_8.cpp" />
+    <ClCompile Include="src\day_9\day_9.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h" />
+    <ClInclude Include="src\day_8\Console.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day_1.txt" />
@@ -173,6 +176,7 @@
     <Text Include="input\day_5.txt" />
     <Text Include="input\day_6.txt" />
     <Text Include="input\day_7.txt" />
+    <Text Include="input\day_8.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

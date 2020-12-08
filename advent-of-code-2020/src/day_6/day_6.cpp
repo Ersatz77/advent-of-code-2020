@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_set>
 #include <algorithm>
+#include <stdexcept>
 
 void day_6_part_1()
 {

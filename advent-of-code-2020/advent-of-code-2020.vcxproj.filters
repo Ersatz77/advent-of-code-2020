@@ -45,9 +45,18 @@
     <ClCompile Include="src\day_8\day_8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_8\Console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_9\day_9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_8\Console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,5 +68,6 @@
     <Text Include="input\day_5.txt" />
     <Text Include="input\day_6.txt" />
     <Text Include="input\day_7.txt" />
+    <Text Include="input\day_8.txt" />
   </ItemGroup>
 </Project>
