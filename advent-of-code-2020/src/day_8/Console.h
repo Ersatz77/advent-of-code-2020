@@ -6,22 +6,32 @@
 #include <iostream>
 #include <vector>
 
+enum class Console_status
+{
+	TERMINATED = 0,
+	RUNNING,
+	WAITING,
+	LOOPED
+};
+
 class Console
 {
 public:
 	Console(const std::vector<Instruction>& instructions);
 
-	// Runs instructions and either returns the value in the accumulator before the instructions or
-	// returns the value in the accumulator after the program terminates
-	int run();
+	// Runs instructions and sets status depending on execution
+	void run();
 
-	// returns true if the instructions cause an infinite loop
-	bool has_looped() const { return m_has_looped; }
+	Console_status get_status() const { return m_status; }
+	int get_accumulator() const { return m_accumulator; }
 
 private:
 	std::vector<Instruction> m_instructions;
+	std::vector<int> m_visited_addresses;
+	int m_instruction_ptr;
 	int m_accumulator;
-	bool m_has_looped;
+
+	Console_status m_status;
 };
 
 #endif // !DAY_8_CONSOLE_H

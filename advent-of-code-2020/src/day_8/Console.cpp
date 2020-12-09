@@ -6,59 +6,57 @@
 
 Console::Console(const std::vector<Instruction>& instructions) :
 	m_instructions(instructions),
+	m_instruction_ptr(0),
 	m_accumulator(0),
-	m_has_looped(false)
+	m_status(Console_status::WAITING)
 {
 }
 
 // Runs instructions and either returns the value in the accumulator before the instructions or
 // returns the value in the accumulator after the program terminates
-int Console::run()
+void Console::run()
 {
 	//std::cout << "Num instructions: " << m_instructions.size() << "\n\n";
 
-	m_has_looped = false;
-	int instruction_ptr = 0;
+	m_status = Console_status::RUNNING;
 
 	while (true)
 	{
 		// Break if the instruction pointer is out of range
-		if (instruction_ptr > m_instructions.size() - 1)
+		if (m_instruction_ptr > m_instructions.size() - 1)
 		{
+			m_status = Console_status::TERMINATED;
 			break;
 		}
 
-		Instruction& ins = m_instructions[instruction_ptr];
+		// Get instruction at ptr
+		const Instruction& ins = m_instructions[m_instruction_ptr];
 
 		// Break if the current instruction has already been executed
-		if (ins.get_executions() > 0)
+		if (std::count(m_visited_addresses.begin(), m_visited_addresses.end(), m_instruction_ptr))
 		{
-			m_has_looped = true;
+			m_status = Console_status::LOOPED;
 			break;
 		}
 
-		// Perform operation and increment execution
+		// Add address to visited addresses and preform operation
+		m_visited_addresses.push_back(m_instruction_ptr);
 		switch (ins.get_operation())
 		{
 			case Operation::ACC:
-				++ins;
 				m_accumulator += ins.get_value();
-				++instruction_ptr;
+				++m_instruction_ptr;
 				break;
 
 			case Operation::JMP:
-				++ins;
-				instruction_ptr += ins.get_value();
+				m_instruction_ptr += ins.get_value();
 				break;
 
 			case Operation::NOP:
-				++ins;
-				++instruction_ptr;
+				++m_instruction_ptr;
 				break;
 		}
 
 		//std::cout << ins << '\n' << "ACC: " << m_accumulator << '\n' << "Next ptr: " << instruction_ptr << "\n-------------------------------------\n";
 	}
-
-	return m_accumulator;
 }

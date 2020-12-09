@@ -5,8 +5,7 @@
 
 Instruction::Instruction(const Operation& operation, int value) :
 	m_operation(operation),
-	m_value(value),
-	m_executions(0)
+	m_value(value)
 {
 }
 
@@ -28,11 +27,5 @@ std::ostream& operator<<(std::ostream& os, const Instruction& ins)
 			break;
 	}
 
-	return os << op << ' ' << ins.get_value() << ' ' << ins.get_executions();
-}
-
-Instruction& operator++(Instruction& ins)
-{
-	ins.increment_executions();
-	return ins;
+	return os << op << ' ' << ins.get_value();
 }

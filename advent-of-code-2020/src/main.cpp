@@ -1,3 +1,5 @@
+#include "utility/Timer.h"
+
 #include <iostream>
 #include <stdexcept>
 
@@ -34,6 +36,7 @@ int main()
 {
 	try
 	{
+		
 		day_1_part_1();
 		day_1_part_2();
 

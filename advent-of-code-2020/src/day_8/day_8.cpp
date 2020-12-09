@@ -50,10 +50,11 @@ std::vector<Instruction> create_instructions(const std::string& path)
 void day_8_part_1()
 {
 	std::vector<Instruction> instructions = create_instructions("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_8.txt");
-	Console console(instructions);
 
-	int accumulator = console.run();
-	std::cout << "Day 8 part 1 | Accumulator before program loops: " << accumulator << '\n';
+	Console console(instructions);
+	console.run();
+
+	std::cout << "Day 8 part 1 | Accumulator before program loops: " << console.get_accumulator() << '\n';
 }
 
 void day_8_part_2()
@@ -80,10 +81,13 @@ void day_8_part_2()
 		}
 
 		Console console(instructions);
-		accumulator = console.run();
+		console.run();
+		accumulator = console.get_accumulator();
+
 		//std::cout << "\n================================================\n";
 
-		if (!console.has_looped())
+		// Break if the console terminated
+		if (console.get_status() == Console_status::TERMINATED)
 		{
 			break;
 		}
