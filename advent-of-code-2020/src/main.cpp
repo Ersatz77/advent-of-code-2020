@@ -1,4 +1,5 @@
 #include "utility/Timer.h"
+#include "utility/Scoped_timer.h"
 
 #include <iostream>
 #include <stdexcept>
@@ -35,6 +36,9 @@ void day_9_part_2();
 void day_10_part_1();
 void day_10_part_2();
 
+void day_11_part_1();
+void day_11_part_2();
+
 int main()
 {
 	try
@@ -69,6 +73,9 @@ int main()
 
 		day_10_part_1();
 		day_10_part_2();
+
+		day_11_part_1();
+		day_11_part_2();
 	}
 	catch (std::exception& e)
 	{
