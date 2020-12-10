@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <limits>
+#include <algorithm>
 
 std::vector<uint64_t> get_input(const std::string& path)
 {
@@ -70,53 +71,43 @@ void day_9_part_2()
 {
 	std::vector<uint64_t> code = get_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_9.txt");
 
-	// Get index of invalid number
+	// Get invalid number and it's index
 	uint64_t invalid_number = find_invalid_number(code, 0, 24);
-	size_t invalid_index = 0;
-	for (size_t i = 0; i < code.size(); ++i)
-	{
-		if (code[i] == invalid_number)
-		{
-			invalid_index = i;
-			break;
-		}
-	}
+	size_t invalid_index = std::distance(code.begin(), std::find(code.begin(), code.end(), invalid_number));
 
 	// Find contiguous set that adds up to the invalid number
+	size_t range_min = 0;
+	size_t range_max = 1;
 	std::vector<uint64_t> range;
-	bool found_range = false;
-	for (size_t i = 0; !found_range && i < invalid_index; ++i)
+	while (range_max < invalid_index)
 	{
-		for (size_t j = i + 1; j < invalid_index; ++j)
-		{
-			range = std::vector<uint64_t>(code.begin() + i, code.begin() + j + 1);
-			uint64_t sum = 0;
-			for (const uint64_t value : range)
-			{
-				sum += value;
-			}
+		// Find sum for current range
+		uint64_t sum = 0;
+		range = std::vector<uint64_t>(code.begin() + range_min, code.begin() + range_max + 1);
+		std::for_each(range.begin(), range.end(), [&sum](const uint64_t i) { sum += i; });
 
-			if (sum == invalid_number)
-			{
-				found_range = true;
-				break;
-			}
+		if (sum == invalid_number)
+		{
+			break;
+		}
+		else if (sum < invalid_number)
+		{
+			++range_max;
+		}
+		else if (sum > invalid_number)
+		{
+			++range_min;
 		}
 	}
+
+	//std::for_each(range.begin(), range.end(), [](const uint64_t i) { std::cout << i << '\n'; });
 
 	uint64_t min = std::numeric_limits<uint64_t>::max();
 	uint64_t max = std::numeric_limits<uint64_t>::min();
 	for (const uint64_t i : range)
 	{
-		if (i < min)
-		{
-			min = i;
-		}
-		
-		if (i > max)
-		{
-			max = i;
-		}
+		min = std::min(i, min);
+		max = std::max(i, max);
 	}
 
 	std::cout << "Day 9 part 2 | Encryption weakness: " << min + max << '\n';

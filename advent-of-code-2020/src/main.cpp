@@ -40,32 +40,32 @@ int main()
 	try
 	{
 		
-		//day_1_part_1();
-		//day_1_part_2();
+		day_1_part_1();
+		day_1_part_2();
 
-		//day_2_part_1();
-		//day_2_part_2();
+		day_2_part_1();
+		day_2_part_2();
 
-		//day_3_part_1();
-		//day_3_part_2();
+		day_3_part_1();
+		day_3_part_2();
 
-		//day_4_part_1();
-		//day_4_part_2();
+		day_4_part_1();
+		day_4_part_2();
 
-		//day_5_part_1();
-		//day_5_part_2();
+		day_5_part_1();
+		day_5_part_2();
 
-		//day_6_part_1();
-		//day_6_part_2();
+		day_6_part_1();
+		day_6_part_2();
 
-		//day_7_part_1();
-		//day_7_part_2();
+		day_7_part_1();
+		day_7_part_2();
 
-		//day_8_part_1();
-		//day_8_part_2();
+		day_8_part_1();
+		day_8_part_2();
 
-		//day_9_part_1();
-		//day_9_part_2();
+		day_9_part_1();
+		day_9_part_2();
 
 		day_10_part_1();
 		day_10_part_2();
