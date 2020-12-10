@@ -165,12 +165,14 @@
     <ClCompile Include="src\day_8\Instruction.cpp" />
     <ClCompile Include="src\day_9\day_9.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\utility\Scoped_timer.cpp" />
     <ClCompile Include="src\utility\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h" />
     <ClInclude Include="src\day_8\Console.h" />
     <ClInclude Include="src\day_8\Instruction.h" />
+    <ClInclude Include="src\utility\Scoped_timer.h" />
     <ClInclude Include="src\utility\Timer.h" />
   </ItemGroup>
   <ItemGroup>

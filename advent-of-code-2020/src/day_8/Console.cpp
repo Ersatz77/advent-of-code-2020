@@ -12,8 +12,6 @@ Console::Console(const std::vector<Instruction>& instructions) :
 {
 }
 
-// Runs instructions and either returns the value in the accumulator before the instructions or
-// returns the value in the accumulator after the program terminates
 void Console::run()
 {
 	//std::cout << "Num instructions: " << m_instructions.size() << "\n\n";
@@ -33,7 +31,7 @@ void Console::run()
 		const Instruction& ins = m_instructions[m_instruction_ptr];
 
 		// Break if the current instruction has already been executed
-		if (std::count(m_visited_addresses.begin(), m_visited_addresses.end(), m_instruction_ptr))
+		if (std::count(m_visited_addresses.begin(), m_visited_addresses.end(), m_instruction_ptr) > 0)
 		{
 			m_status = Console_status::LOOPED;
 			break;

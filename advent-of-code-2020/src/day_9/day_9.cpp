@@ -1,9 +1,11 @@
+#include "../utility/Scoped_timer.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-#include <limits>
 #include <algorithm>
+#include <limits>
 
 std::vector<uint64_t> get_input(const std::string& path)
 {
