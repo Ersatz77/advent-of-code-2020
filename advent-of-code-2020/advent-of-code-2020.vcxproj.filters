@@ -66,6 +66,9 @@
     <ClCompile Include="src\day_11\day_11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_12\day_12.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
@@ -95,5 +98,6 @@
     <Text Include="input\day_8.txt" />
     <Text Include="input\day_9.txt" />
     <Text Include="input\day_10.txt" />
+    <Text Include="input\day_11.txt" />
   </ItemGroup>
 </Project>
