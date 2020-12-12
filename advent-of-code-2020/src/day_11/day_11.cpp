@@ -1,29 +1,18 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <vector>
+#include <string>
 #include <algorithm>
 #include <stdexcept>
 
-enum class Seat_state
+enum class Cell
 {
-	INVALID = 0,
-	FLOOR,
-	AVAILABLE,
+	FLOOR = 0,
+	EMPTY,
 	OCCUPIED
 };
 
-struct Seat
-{
-	int x;
-	int y;
-	Seat_state state;
-};
-
-constexpr int g_grid_width = 90;
-constexpr int g_grid_height = 93;
-
-std::vector<Seat> parse_input(const std::string& path)
+std::vector<std::vector<Cell>> parse_input(const std::string& path)
 {
 	std::ifstream file(path);
 	if (!file)
@@ -31,198 +20,69 @@ std::vector<Seat> parse_input(const std::string& path)
 		throw std::runtime_error("Unable to open file: " + path);
 	}
 
-	std::vector<Seat> seats;
+	std::vector<std::vector<Cell>> grid;
 	std::string line;
-	for (int y = 0; std::getline(file, line); ++y)
+	while (std::getline(file, line))
 	{
-		for (int x = 0; x < line.length(); ++x)
+		std::vector<Cell> temp;
+		for (const char c : line)
 		{
-			Seat seat{ x, y, Seat_state::FLOOR };
-			if (line[x] == 'L')
+			switch (c)
 			{
-				seat.state = Seat_state::AVAILABLE;
+				case '.':
+					temp.push_back(Cell::FLOOR);
+					break;
+				case 'L':
+					temp.push_back(Cell::EMPTY);
+					break;
 			}
-
-			seats.push_back(seat);
 		}
+
+		grid.push_back(temp);
 	}
 
-	return seats;
+	return grid;
 }
 
-Seat& get_seat_at_pos(const int x, const int y, std::vector<Seat>& seats)
+int num_occupied_around_pos(const int x, const int y, const std::vector<std::vector<Cell>>& grid)
 {
-	for (Seat& seat : seats)
-	{
-		if (seat.x == x && seat.y == y)
-		{
-			return seat;
-		}
-	}
-
-	static Seat s{ -1,-1, Seat_state::INVALID };
-	return s;
-}
-
-int seats_occupied_around_pos(const int x, const int y, std::vector<Seat>& seats)
-{
+	static const std::vector<int> s_deltas = { -1, -1, 0, -1, 1, -1, -1, 0, 1, 0, -1, 1, 0, 1, 1, 1 };
 	int count = 0;
-	if (get_seat_at_pos(x - 1, y - 1, seats).state == Seat_state::OCCUPIED)
+	for (size_t i = 1; i < s_deltas.size(); i += 2)
 	{
-		++count;
-	}
-		
-	if (get_seat_at_pos(x, y - 1, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x + 1, y - 1, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x - 1, y, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x + 1, y, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x - 1, y + 1, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x, y + 1, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
-	}
-
-	if (get_seat_at_pos(x + 1, y + 1, seats).state == Seat_state::OCCUPIED)
-	{
-		++count;
+		int dx = x + s_deltas[i - 1];
+		int dy = y + s_deltas[i];
+		if (dx >= 0 && dx < grid.front().size() && dy >= 0 && dy < grid.size() && grid[dy][dx] == Cell::OCCUPIED)
+		{
+			++count;
+		}
 	}
 
 	return count;
 }
 
-int first_seats_occupied_around_pos(const int x, const int y, std::vector<Seat>& seats)
+int num_occupied_around_pos_2(const int x, const int y, const std::vector<std::vector<Cell>>& grid)
 {
+	static const std::vector<int> s_deltas = { -1, -1, 0, -1, 1, -1, -1, 0, 1, 0, -1, 1, 0, 1, 1, 1 };
 	int count = 0;
-
-	// Up
-	for (int offset = 1; offset < g_grid_height; ++offset)
+	for (size_t i = 1; i < s_deltas.size(); i += 2)
 	{
-		const Seat& s = get_seat_at_pos(x, y - offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
+		int dx = x + s_deltas[i - 1];
+		int dy = y + s_deltas[i];
+		while (dx >= 0 && dx < grid.front().size() && dy >= 0 && dy < grid.size())
 		{
-			if (s.state == Seat_state::OCCUPIED)
+			if (grid[dy][dx] == Cell::EMPTY || grid[dy][dx] == Cell::OCCUPIED)
 			{
-				++count;
-			}
-			break;
-		}
-	}
+				if (grid[dy][dx] == Cell::OCCUPIED)
+				{
+					++count;
+				}
 
-	// Down
-	for (int offset = 1; offset < g_grid_height; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x, y + offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
+				break;
 			}
-			break;
-		}
-	}
 
-	// Left
-	for (int offset = 1; offset < g_grid_width; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x - offset, y, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
-		}
-	}
-
-	// Right
-	for (int offset = 1; offset < g_grid_width; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x + offset, y, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
-		}
-	}
-
-	// Top Left
-	for (int offset = 1; offset < g_grid_height; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x - offset, y - offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
-		}
-	}
-
-	// Top Right
-	for (int offset = 1; offset < g_grid_height; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x + offset, y - offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
-		}
-	}
-
-	// Bottom Left
-	for (int offset = 1; offset < g_grid_height; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x - offset, y + offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
-		}
-	}
-
-	// Bottom Right
-	for (int offset = 1; offset < g_grid_height; ++offset)
-	{
-		const Seat& s = get_seat_at_pos(x + offset, y + offset, seats);
-		if (s.state != Seat_state::INVALID && s.state != Seat_state::FLOOR)
-		{
-			if (s.state == Seat_state::OCCUPIED)
-			{
-				++count;
-			}
-			break;
+			dx += s_deltas[i - 1];
+			dy += s_deltas[i];
 		}
 	}
 
@@ -231,68 +91,86 @@ int first_seats_occupied_around_pos(const int x, const int y, std::vector<Seat>&
 
 void day_11_part_1()
 {
-	std::vector<Seat> seats = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
-	std::vector<Seat> temp_seats = seats;
+	std::vector<std::vector<Cell>> grid = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
+	
+	const size_t max_x = grid.front().size();
+	const size_t max_y = grid.size();
 
-	int changed_seats = -1;
-	while (changed_seats != 0)
+	int changed_seats = 1;
+	while (changed_seats > 0)
 	{
 		changed_seats = 0;
-		for (int i = 0; i < seats.size(); ++i)
+		std::vector<std::vector<Cell>> temp_grid = grid;
+		for (int y = 0; y < max_y; ++y)
 		{
-			int x = seats[i].x;
-			int y = seats[i].y;
-			if (seats[i].state == Seat_state::AVAILABLE && seats_occupied_around_pos(x, y, seats) == 0)
+			for (int x = 0; x < max_x; ++x)
 			{
-				temp_seats[i].state = Seat_state::OCCUPIED;
-				++changed_seats;
-			}
-			else if (seats[i].state == Seat_state::OCCUPIED && seats_occupied_around_pos(x, y, seats) >= 4)
-			{
-				temp_seats[i].state = Seat_state::AVAILABLE;
-				++changed_seats;
+				if (grid[y][x] == Cell::EMPTY && num_occupied_around_pos(x, y, grid) == 0)
+				{
+					temp_grid[y][x] = Cell::OCCUPIED;
+					++changed_seats;
+				}
+				else if (grid[y][x] == Cell::OCCUPIED && num_occupied_around_pos(x, y, grid) >= 4)
+				{
+					temp_grid[y][x] = Cell::EMPTY;
+					++changed_seats;
+				}
 			}
 		}
 
-		seats = temp_seats;
+		// Move temp grid into grid vector instead of making a bunch of copies right before we delete the temp_grid
+		grid = std::move(temp_grid);
 	}
 
-	int occupied_seats = 0;
-	std::for_each(seats.begin(), seats.end(), [&occupied_seats](const Seat& s) { if (s.state == Seat_state::OCCUPIED) { ++occupied_seats; }});
+	// Count number of occupied seats
+	int64_t occupied_seats = 0;
+	for (const std::vector<Cell>& v : grid)
+	{
+		occupied_seats += std::count_if(v.begin(), v.end(), [](Cell c) { return (c == Cell::OCCUPIED); });
+	}
 
 	std::cout << "Day 11 part 1 | Number of occupied seats: " << occupied_seats << '\n';
 }
 
 void day_11_part_2()
 {
-	std::vector<Seat> seats = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
-	std::vector<Seat> temp_seats = seats;
+	std::vector<std::vector<Cell>> grid = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
 
-	int changed_seats = -1;
-	while (changed_seats != 0)
+	const size_t max_x = grid.front().size();
+	const size_t max_y = grid.size();
+
+	int changed_seats = 1;
+	while (changed_seats > 0)
 	{
 		changed_seats = 0;
-		for (int i = 0; i < seats.size(); ++i)
+		std::vector<std::vector<Cell>> temp_grid = grid;
+		for (int y = 0; y < max_y; ++y)
 		{
-			int x = seats[i].x;
-			int y = seats[i].y;
-			if (seats[i].state == Seat_state::AVAILABLE && first_seats_occupied_around_pos(x, y, seats) == 0)
+			for (int x = 0; x < max_x; ++x)
 			{
-				temp_seats[i].state = Seat_state::OCCUPIED;
-				++changed_seats;
-			}
-			else if (seats[i].state == Seat_state::OCCUPIED && first_seats_occupied_around_pos(x, y, seats) >= 5)
-			{
-				temp_seats[i].state = Seat_state::AVAILABLE;
-				++changed_seats;
+				if (grid[y][x] == Cell::EMPTY && num_occupied_around_pos_2(x, y, grid) == 0)
+				{
+					temp_grid[y][x] = Cell::OCCUPIED;
+					++changed_seats;
+				}
+				else if (grid[y][x] == Cell::OCCUPIED && num_occupied_around_pos_2(x, y, grid) >= 5)
+				{
+					temp_grid[y][x] = Cell::EMPTY;
+					++changed_seats;
+				}
 			}
 		}
 
-		seats = temp_seats;
+		// Move temp grid into grid vector instead of making a bunch of copies right before we delete the temp_grid
+		grid = std::move(temp_grid);
 	}
 
-	int occupied_seats = 0;
-	std::for_each(seats.begin(), seats.end(), [&occupied_seats](const Seat& s) { if (s.state == Seat_state::OCCUPIED) { ++occupied_seats; }});
+	// Count number of occupied seats
+	int64_t occupied_seats = 0;
+	for (const std::vector<Cell>& v : grid)
+	{
+		occupied_seats += std::count_if(v.begin(), v.end(), [](Cell c) { return (c == Cell::OCCUPIED); });
+	}
 
 	std::cout << "Day 11 part 2 | Number of occupied seats: " << occupied_seats << '\n';
 }

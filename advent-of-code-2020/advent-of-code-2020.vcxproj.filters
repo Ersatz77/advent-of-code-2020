@@ -63,10 +63,10 @@
     <ClCompile Include="src\utility\Scoped_timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_11\day_11.cpp">
+    <ClCompile Include="src\day_12\day_12.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_12\day_12.cpp">
+    <ClCompile Include="src\day_11\day_11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
