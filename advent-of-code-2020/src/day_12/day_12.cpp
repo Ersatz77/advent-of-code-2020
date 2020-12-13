@@ -73,6 +73,25 @@ std::vector<Instruction> parse_input(const std::string& path)
 	return instructions;
 }
 
+void move_forwards(const int value, int& x, int& y, const int current_rotation)
+{
+	switch ((current_rotation % 360 + 360) % 360)
+	{
+		case 0:
+			x += value;
+			break;
+		case 90:
+			y -= value;
+			break;
+		case 180:
+			x -= value;
+			break;
+		case 270:
+			y += value;
+			break;
+	}
+}
+
 int manhattan_distance(const int x1, const int x2, const int y1, const int y2)
 {
 	return std::abs(x1 - x2) + std::abs(y1 - y2);
@@ -102,47 +121,29 @@ void day_12_part_1()
 	int rotation = 0;
 	for (const Instruction& instruction : instructions)
 	{
-		if (instruction.action == Action::N)
+		switch (instruction.action)
 		{
-			y -= instruction.value;
-		}
-		else if (instruction.action == Action::S)
-		{
-			y += instruction.value;
-		}
-		else if (instruction.action == Action::E)
-		{
-			x += instruction.value;
-		}
-		else if (instruction.action == Action::W)
-		{
-			x -= instruction.value;
-		}
-		else if (instruction.action == Action::L)
-		{
-			rotation += instruction.value;
-		}
-		else if (instruction.action == Action::R)
-		{
-			rotation -= instruction.value;
-		}
-		else if (instruction.action == Action::F)
-		{
-			switch ((rotation % 360 + 360) % 360)
-			{
-				case 0:
-					x += instruction.value;
-					break;
-				case 90:
-					y -= instruction.value;
-					break;
-				case 180:
-					x -= instruction.value;
-					break;
-				case 270:
-					y += instruction.value;
-					break;
-			}
+			case Action::N:
+				y -= instruction.value;
+				break;
+			case Action::S:
+				y += instruction.value;
+				break;
+			case Action::E:
+				x += instruction.value;
+				break;
+			case Action::W:
+				x -= instruction.value;
+				break;
+			case Action::L:
+				rotation += instruction.value;
+				break;
+			case Action::R:
+				rotation -= instruction.value;
+				break;
+			case Action::F:
+				move_forwards(instruction.value, x, y, rotation);
+				break;
 		}
 	}
 
@@ -159,37 +160,30 @@ void day_12_part_2()
 	int waypoint_y = -1;
 	for (const Instruction& instruction : instructions)
 	{
-		if (instruction.action == Action::N)
+		switch (instruction.action)
 		{
-			waypoint_y -= instruction.value;
-		}
-		else if (instruction.action == Action::S)
-		{
-			waypoint_y += instruction.value;
-		}
-		else if (instruction.action == Action::E)
-		{
-			waypoint_x += instruction.value;
-		}
-		else if (instruction.action == Action::W)
-		{
-			waypoint_x -= instruction.value;
-		}
-		else if (instruction.action == Action::L)
-		{
-			rotate_around(waypoint_x, waypoint_y, 0, 0, 360.0 - instruction.value);
-		}
-		else if (instruction.action == Action::R)
-		{
-			rotate_around(waypoint_x, waypoint_y, 0, 0, instruction.value);
-		}
-		else if (instruction.action == Action::F)
-		{
-			for (int i = 0; i < instruction.value; ++i)
-			{
-				ship_x += waypoint_x;
-				ship_y += waypoint_y;
-			}
+			case Action::N:
+				waypoint_y -= instruction.value;
+				break;
+			case Action::S:
+				waypoint_y += instruction.value;
+				break;
+			case Action::E:
+				waypoint_x += instruction.value;
+				break;
+			case Action::W:
+				waypoint_x -= instruction.value;
+				break;
+			case Action::L:
+				rotate_around(waypoint_x, waypoint_y, 0, 0, 360.0 - instruction.value);
+				break;
+			case Action::R:
+				rotate_around(waypoint_x, waypoint_y, 0, 0, instruction.value);
+				break;
+			case Action::F:
+				ship_x += waypoint_x * instruction.value;
+				ship_y += waypoint_y * instruction.value;
+				break;
 		}
 	}
 
