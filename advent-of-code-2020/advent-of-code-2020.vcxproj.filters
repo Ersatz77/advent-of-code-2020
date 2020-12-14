@@ -75,6 +75,12 @@
     <ClCompile Include="src\day_14\day_14.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_14\Docking_computer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_15\day_15.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
@@ -92,6 +98,9 @@
     <ClInclude Include="src\utility\Scoped_timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\day_14\Docking_computer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day_1.txt" />
@@ -107,5 +116,6 @@
     <Text Include="input\day_11.txt" />
     <Text Include="input\day_12.txt" />
     <Text Include="input\day_13.txt" />
+    <Text Include="input\day_14.txt" />
   </ItemGroup>
 </Project>
