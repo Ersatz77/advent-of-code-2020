@@ -5,7 +5,7 @@
 
 int find_nth_in_sequence(const std::vector<int>& starting_sequence, const int turns)
 {
-	// Construct map from sequence
+	// Construct map from starting sequence
 	std::unordered_map<int, std::vector<int>> numbers;
 	for (size_t i = 0; i < starting_sequence.size(); ++i)
 	{
@@ -15,18 +15,20 @@ int find_nth_in_sequence(const std::vector<int>& starting_sequence, const int tu
 	int previous_number = starting_sequence[starting_sequence.size() - 1];
 	for (size_t i = numbers.size() + 1; i <= turns; ++i)
 	{
-		// Check if this number has been only seen once
+		// Check if the previous number has only been seen once
 		if (numbers[previous_number].size() == 1)
 		{
+			// Push back the current turn for the value 0 and set previous number to 0
 			numbers[0].push_back(static_cast<int>(i));
 			previous_number = 0;
 		}
 		else
 		{
 			// Get reference to turns for previous number and get the difference between the last 2 elements
-			std::vector<int>& turns = numbers[previous_number];
+			const std::vector<int>& turns = numbers[previous_number];
 			int turn_difference = turns[turns.size() - 1] - turns[turns.size() - 2];
 
+			// Push back the current turn for the turn difference and set previous number to the turn difference
 			numbers[turn_difference].push_back(static_cast<int>(i));
 			previous_number = turn_difference;
 		}
