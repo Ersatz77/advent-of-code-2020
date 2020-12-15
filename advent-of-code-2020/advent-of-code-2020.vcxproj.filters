@@ -81,6 +81,9 @@
     <ClCompile Include="src\day_15\day_15.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_16\day_16.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
