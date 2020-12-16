@@ -46,5 +46,5 @@ void day_15_part_1()
 void day_15_part_2()
 {
 	std::vector<int> starting_sequence = { 17, 1, 3, 16, 19, 0 };
-	std::cout << "Day 15 part 1 | 30000000th value: " << find_nth_in_sequence(starting_sequence, 30000000) << '\n';
+	std::cout << "Day 15 part 2 | 30000000th value: " << find_nth_in_sequence(starting_sequence, 30000000) << '\n';
 }
