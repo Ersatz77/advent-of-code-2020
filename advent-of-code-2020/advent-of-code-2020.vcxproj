@@ -163,6 +163,7 @@
     <ClCompile Include="src\day_14\Docking_computer.cpp" />
     <ClCompile Include="src\day_15\day_15.cpp" />
     <ClCompile Include="src\day_16\day_16.cpp" />
+    <ClCompile Include="src\day_17\day_17.cpp" />
     <ClCompile Include="src\day_1\day_1.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
@@ -194,6 +195,7 @@
     <Text Include="input\day_12.txt" />
     <Text Include="input\day_13.txt" />
     <Text Include="input\day_14.txt" />
+    <Text Include="input\day_16.txt" />
     <Text Include="input\day_2.txt" />
     <Text Include="input\day_3.txt" />
     <Text Include="input\day_4.txt" />

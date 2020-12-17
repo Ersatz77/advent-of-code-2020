@@ -12,7 +12,7 @@ int find_nth_in_sequence(const std::vector<int>& starting_sequence, const int tu
 		numbers[starting_sequence[i]].push_back(static_cast<int>(i + 1));
 	}
 
-	int previous_number = starting_sequence[starting_sequence.size() - 1];
+	int previous_number = starting_sequence.back();
 	for (size_t i = numbers.size() + 1; i <= turns; ++i)
 	{
 		// Check if the previous number has only been seen once
