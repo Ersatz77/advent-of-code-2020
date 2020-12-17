@@ -161,8 +161,13 @@
     <ClCompile Include="src\day_13\day_13.cpp" />
     <ClCompile Include="src\day_14\day_14.cpp" />
     <ClCompile Include="src\day_15\day_15.cpp" />
+    <ClCompile Include="src\day_17\Cube_4d.cpp" />
     <ClCompile Include="src\day_16\day_16.cpp" />
+    <ClCompile Include="src\day_17\Grid_4d.cpp" />
+    <ClCompile Include="src\day_17\Cube_3d.cpp" />
     <ClCompile Include="src\day_17\day_17.cpp" />
+    <ClCompile Include="src\day_17\Grid_3d.cpp" />
+    <ClCompile Include="src\day_18\day_18.cpp" />
     <ClCompile Include="src\day_1\day_1.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
@@ -180,6 +185,10 @@
     <ClCompile Include="src\utility\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\day_17\Grid_4d.h" />
+    <ClInclude Include="src\day_17\Cube_4d.h" />
+    <ClInclude Include="src\day_17\Cube_3d.h" />
+    <ClInclude Include="src\day_17\Grid_3d.h" />
     <ClInclude Include="src\day_4\Passport.h" />
     <ClInclude Include="src\day_8\Console.h" />
     <ClInclude Include="src\day_8\Instruction.h" />
@@ -194,6 +203,7 @@
     <Text Include="input\day_13.txt" />
     <Text Include="input\day_14.txt" />
     <Text Include="input\day_16.txt" />
+    <Text Include="input\day_17.txt" />
     <Text Include="input\day_2.txt" />
     <Text Include="input\day_3.txt" />
     <Text Include="input\day_4.txt" />
