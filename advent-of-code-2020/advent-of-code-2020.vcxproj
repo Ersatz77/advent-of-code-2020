@@ -167,7 +167,9 @@
     <ClCompile Include="src\day_17\Cube_3d.cpp" />
     <ClCompile Include="src\day_17\day_17.cpp" />
     <ClCompile Include="src\day_17\Grid_3d.cpp" />
+    <ClCompile Include="src\day_18\Calculator.cpp" />
     <ClCompile Include="src\day_18\day_18.cpp" />
+    <ClCompile Include="src\day_19\day_19.cpp" />
     <ClCompile Include="src\day_1\day_1.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
@@ -189,6 +191,7 @@
     <ClInclude Include="src\day_17\Cube_4d.h" />
     <ClInclude Include="src\day_17\Cube_3d.h" />
     <ClInclude Include="src\day_17\Grid_3d.h" />
+    <ClInclude Include="src\day_18\Calculator.h" />
     <ClInclude Include="src\day_4\Passport.h" />
     <ClInclude Include="src\day_8\Console.h" />
     <ClInclude Include="src\day_8\Instruction.h" />
