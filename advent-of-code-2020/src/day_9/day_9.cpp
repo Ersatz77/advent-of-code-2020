@@ -1,3 +1,5 @@
+#include "day_9.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>

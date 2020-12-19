@@ -1,3 +1,5 @@
+#include "day_18.h"
+
 #include "Calculator.h"
 
 #include <iostream>

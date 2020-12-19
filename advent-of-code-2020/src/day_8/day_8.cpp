@@ -1,3 +1,5 @@
+#include "day_8.h"
+
 #include "Instruction.h"
 #include "Console.h"
 

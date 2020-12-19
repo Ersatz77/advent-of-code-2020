@@ -1,3 +1,5 @@
+#include "day_17.h"
+
 #include "Cube_3d.h"
 #include "Grid_3d.h"
 

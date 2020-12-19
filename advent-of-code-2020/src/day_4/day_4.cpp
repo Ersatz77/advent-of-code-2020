@@ -1,3 +1,5 @@
+#include "day_4.h"
+
 #include "Passport.h"
 
 #include <iostream>

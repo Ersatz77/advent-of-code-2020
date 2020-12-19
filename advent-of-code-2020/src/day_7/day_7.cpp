@@ -1,3 +1,5 @@
+#include "day_7.h"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>

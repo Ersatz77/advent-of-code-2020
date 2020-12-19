@@ -171,6 +171,7 @@
     <ClCompile Include="src\day_18\day_18.cpp" />
     <ClCompile Include="src\day_19\day_19.cpp" />
     <ClCompile Include="src\day_1\day_1.cpp" />
+    <ClCompile Include="src\day_20\day_20.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
     <ClCompile Include="src\day_4\day_4.cpp" />
@@ -187,14 +188,34 @@
     <ClCompile Include="src\utility\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\day_10\day_10.h" />
+    <ClInclude Include="src\day_11\day_11.h" />
+    <ClInclude Include="src\day_12\day_12.h" />
+    <ClInclude Include="src\day_13\day_13.h" />
+    <ClInclude Include="src\day_14\day_14.h" />
+    <ClInclude Include="src\day_15\day_15.h" />
+    <ClInclude Include="src\day_16\day_16.h" />
+    <ClInclude Include="src\day_17\day_17.h" />
     <ClInclude Include="src\day_17\Grid_4d.h" />
     <ClInclude Include="src\day_17\Cube_4d.h" />
     <ClInclude Include="src\day_17\Cube_3d.h" />
     <ClInclude Include="src\day_17\Grid_3d.h" />
     <ClInclude Include="src\day_18\Calculator.h" />
+    <ClInclude Include="src\day_18\day_18.h" />
+    <ClInclude Include="src\day_19\day_19.h" />
+    <ClInclude Include="src\day_1\day_1.h" />
+    <ClInclude Include="src\day_20\day_20.h" />
+    <ClInclude Include="src\day_2\day_2.h" />
+    <ClInclude Include="src\day_3\day_3.h" />
+    <ClInclude Include="src\day_4\day_4.h" />
     <ClInclude Include="src\day_4\Passport.h" />
+    <ClInclude Include="src\day_5\day_5.h" />
+    <ClInclude Include="src\day_6\day_6.h" />
+    <ClInclude Include="src\day_7\day_7.h" />
     <ClInclude Include="src\day_8\Console.h" />
+    <ClInclude Include="src\day_8\day_8.h" />
     <ClInclude Include="src\day_8\Instruction.h" />
+    <ClInclude Include="src\day_9\day_9.h" />
     <ClInclude Include="src\utility\Scoped_timer.h" />
     <ClInclude Include="src\utility\Timer.h" />
   </ItemGroup>
@@ -207,6 +228,8 @@
     <Text Include="input\day_14.txt" />
     <Text Include="input\day_16.txt" />
     <Text Include="input\day_17.txt" />
+    <Text Include="input\day_18.txt" />
+    <Text Include="input\day_19.txt" />
     <Text Include="input\day_2.txt" />
     <Text Include="input\day_3.txt" />
     <Text Include="input\day_4.txt" />
