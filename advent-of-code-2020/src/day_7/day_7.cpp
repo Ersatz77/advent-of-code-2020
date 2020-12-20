@@ -97,9 +97,9 @@ int bags_in_shiny_gold_bag(const std::string& starting_bag, const Rules& rules)
 	return count;
 }
 
-void day_7_part_1()
+void day_7_part_1(const std::string& input_path)
 {
-	Rules rules = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_7.txt");
+	Rules rules = parse_input(input_path + "day_7.txt");
 
 	// Count number of bags that will eventually have a shiny gold bag
 	int count = 0;
@@ -115,9 +115,9 @@ void day_7_part_1()
 	std::cout << "Day 7 part 1 | Bags that eventually contain a shiny gold bag: " << count << '\n';
 }
 
-void day_7_part_2()
+void day_7_part_2(const std::string& input_path)
 {
-	Rules rules = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_7.txt");
+	Rules rules = parse_input(input_path + "day_7.txt");
 
 	std::cout << "Day 7 part 2 | Bags inside a shiny gold bag: " << bags_in_shiny_gold_bag("shiny gold", rules) - 1 << '\n';
 }

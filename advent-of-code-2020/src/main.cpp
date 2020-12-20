@@ -23,72 +23,83 @@
 #include "day_20/day_20.h"
 
 #include <iostream>
+#include <vector>
+#include <string>
 #include <stdexcept>
 
-int main()
+int main(int argc, char* argv[])
 {
+	// If no arguments were passed, print a message an return
+	if (argc == 1)
+	{
+		std::cout << "No input directory specified!\n";
+		return 0;
+	}
+
+	// Get input path from argv
+	std::string input_path = argv[argc - 1];
+
 	try
 	{
-		
-		//day_1_part_1();
-		//day_1_part_2();
+		//day_1_part_1(input_path);
+		//day_1_part_2(input_path);
 
-		//day_2_part_1();
-		//day_2_part_2();
+		//day_2_part_1(input_path);
+		//day_2_part_2(input_path);
 
-		//day_3_part_1();
-		//day_3_part_2();
+		//day_3_part_1(input_path);
+		//day_3_part_2(input_path);
 
-		//day_4_part_1();
-		//day_4_part_2();
+		//day_4_part_1(input_path);
+		//day_4_part_2(input_path);
 
-		//day_5_part_1();
-		//day_5_part_2();
+		//day_5_part_1(input_path);
+		//day_5_part_2(input_path);
 
-		//day_6_part_1();
-		//day_6_part_2();
+		//day_6_part_1(input_path);
+		//day_6_part_2(input_path);
 
-		//day_7_part_1();
-		//day_7_part_2();
+		//day_7_part_1(input_path);
+		//day_7_part_2(input_path);
 
-		//day_8_part_1();
-		//day_8_part_2();
+		//day_8_part_1(input_path);
+		//day_8_part_2(input_path);
 
-		//day_9_part_1();
-		//day_9_part_2();
+		//day_9_part_1(input_path);
+		//day_9_part_2(input_path);
 
-		//day_10_part_1();
-		//day_10_part_2();
+		//day_10_part_1(input_path);
+		//day_10_part_2(input_path);
 
-		//day_11_part_1();
-		//day_11_part_2();
+		//day_11_part_1(input_path);
+		//day_11_part_2(input_path);
 
-		//day_12_part_1();
-		//day_12_part_2();
+		//day_12_part_1(input_path);
+		//day_12_part_2(input_path);
 
-		//day_13_part_1();
-		//day_13_part_2();
+		//day_13_part_1(input_path);
+		//day_13_part_2(input_path);
 
-		//day_14_part_1();
-		//day_14_part_2();
+		//day_14_part_1(input_path);
+		//day_14_part_2(input_path);
 
-		//day_15_part_1();
-		//day_15_part_2();
+		//day_15_part_1(input_path);
+		//day_15_part_2(input_path);
 
-		//day_16_part_1();
-		//day_16_part_2();
+		//day_16_part_1(input_path);
+		//day_16_part_2(input_path);
 
-		//day_17_part_1();
-		//day_17_part_2();
+		//day_17_part_1(input_path);
+		//day_17_part_2(input_path);
 
-		//day_18_part_1();
-		//day_18_part_2();
+		//day_18_part_1(input_path);
+		//day_18_part_2(input_path);
 
-		day_19_part_1();
-		day_19_part_2();
+		//day_19_part_1(input_path);
+		//day_19_part_2(input_path);
 
-		day_20_part_1();
-		day_20_part_2();
+		day_20_part_1(input_path);
+		day_20_part_2(input_path);
 	}
 	catch (std::exception& e)
 	{

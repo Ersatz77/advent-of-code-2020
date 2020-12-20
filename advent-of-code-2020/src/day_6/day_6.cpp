@@ -7,9 +7,9 @@
 #include <algorithm>
 #include <stdexcept>
 
-void day_6_part_1()
+void day_6_part_1(const std::string& input_path)
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_6.txt";
+	std::string path = input_path + "day_6.txt";
 	std::ifstream file(path);
 	if (!file)
 	{
@@ -39,9 +39,9 @@ void day_6_part_1()
 	std::cout << "Day 6 part 1 | Sum of questions anyone answered: " << sum << '\n';
 }
 
-void day_6_part_2()
+void day_6_part_2(const std::string& input_path)
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_6.txt";
+	std::string path = input_path + "day_6.txt";
 	std::ifstream file(path);
 	if (!file)
 	{

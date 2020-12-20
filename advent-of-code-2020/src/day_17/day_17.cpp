@@ -42,9 +42,9 @@ std::vector<T> parse_input(const std::string& path)
 	return active_cubes;
 }
 
-void day_17_part_1()
+void day_17_part_1(const std::string& input_path)
 {
-	std::vector<Cube_3d> initial_active_cubes = parse_input<Cube_3d>("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_17.txt");
+	std::vector<Cube_3d> initial_active_cubes = parse_input<Cube_3d>(input_path + "day_17.txt");
 
 	Grid_3d grid(initial_active_cubes);
 	for (int i = 0; i < 6; ++i)
@@ -55,9 +55,9 @@ void day_17_part_1()
 	std::cout << "Day 17 part 1 | Active cubes: " << grid.num_active() << '\n';
 }
 
-void day_17_part_2()
+void day_17_part_2(const std::string& input_path)
 {
-	std::vector<Cube_4d> initial_active_cubes = parse_input<Cube_4d>("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_17.txt");
+	std::vector<Cube_4d> initial_active_cubes = parse_input<Cube_4d>(input_path + "day_17.txt");
 
 	Grid_4d grid(initial_active_cubes);
 	for (int i = 0; i < 6; ++i)

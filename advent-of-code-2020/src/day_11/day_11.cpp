@@ -91,9 +91,9 @@ int num_occupied_around_pos_2(const int x, const int y, const std::vector<std::v
 	return count;
 }
 
-void day_11_part_1()
+void day_11_part_1(const std::string& input_path)
 {
-	std::vector<std::vector<Cell>> grid = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
+	std::vector<std::vector<Cell>> grid = parse_input(input_path + "day_11.txt");
 	
 	const size_t max_x = grid.front().size();
 	const size_t max_y = grid.size();
@@ -134,9 +134,9 @@ void day_11_part_1()
 	std::cout << "Day 11 part 1 | Number of occupied seats: " << occupied_seats << '\n';
 }
 
-void day_11_part_2()
+void day_11_part_2(const std::string& input_path)
 {
-	std::vector<std::vector<Cell>> grid = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_11.txt");
+	std::vector<std::vector<Cell>> grid = parse_input(input_path + "day_11.txt");
 
 	const size_t max_x = grid.front().size();
 	const size_t max_y = grid.size();

@@ -49,9 +49,9 @@ std::vector<Instruction> create_instructions(const std::string& path)
 	return instructions;
 }
 
-void day_8_part_1()
+void day_8_part_1(const std::string& input_path)
 {
-	std::vector<Instruction> instructions = create_instructions("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_8.txt");
+	std::vector<Instruction> instructions = create_instructions(input_path + "day_8.txt");
 
 	Console console(instructions);
 	console.run();
@@ -59,9 +59,9 @@ void day_8_part_1()
 	std::cout << "Day 8 part 1 | Accumulator before program loops: " << console.get_accumulator() << '\n';
 }
 
-void day_8_part_2()
+void day_8_part_2(const std::string& input_path)
 {
-	std::vector<Instruction> original_instructions = create_instructions("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_8.txt");
+	std::vector<Instruction> original_instructions = create_instructions(input_path + "day_8.txt");
 	int accumulator = 0;
 
 	// Change JMP or NOP instructions until the program terminates

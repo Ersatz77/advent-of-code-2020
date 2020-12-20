@@ -61,18 +61,18 @@ uint64_t find_invalid_number(const std::vector<uint64_t> code, size_t range_min,
 	return invalid_number;
 }
 
-void day_9_part_1()
+void day_9_part_1(const std::string& input_path)
 {
-	std::vector<uint64_t> code = get_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_9.txt");
+	std::vector<uint64_t> code = get_input(input_path + "day_9.txt");
 
 	uint64_t invalid_number = find_invalid_number(code, 0, 24);
 
 	std::cout << "Day 9 part 1 | Invalid number: " << invalid_number << '\n';
 }
 
-void day_9_part_2()
+void day_9_part_2(const std::string& input_path)
 {
-	std::vector<uint64_t> code = get_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_9.txt");
+	std::vector<uint64_t> code = get_input(input_path + "day_9.txt");
 
 	// Get invalid number and it's index
 	uint64_t invalid_number = find_invalid_number(code, 0, 24);

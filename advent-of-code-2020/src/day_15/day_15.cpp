@@ -39,13 +39,13 @@ int find_nth_in_sequence(const std::vector<int>& starting_sequence, const int tu
 	return previous_number;
 }
 
-void day_15_part_1()
+void day_15_part_1(const std::string& input_path)
 {
 	std::vector<int> starting_sequence = { 17, 1, 3, 16, 19, 0 };
 	std::cout << "Day 15 part 1 | 2020th value: " << find_nth_in_sequence(starting_sequence, 2020) << '\n';
 }
 
-void day_15_part_2()
+void day_15_part_2(const std::string& input_path)
 {
 	std::vector<int> starting_sequence = { 17, 1, 3, 16, 19, 0 };
 	std::cout << "Day 15 part 2 | 30000000th value: " << find_nth_in_sequence(starting_sequence, 30000000) << '\n';

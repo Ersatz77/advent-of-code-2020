@@ -143,26 +143,26 @@ void parse_input(const std::string& path, std::vector<Rule>& rules, std::vector<
 	}
 }
 
-void day_16_part_1()
+void day_16_part_1(const std::string& input_path)
 {
 	std::vector<Rule> rules;
 	std::vector<int> my_ticket;
 	std::vector<std::vector<int>> tickets;
 	uint64_t error_rate = 0;
 
-	parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_16.txt", rules, my_ticket, tickets, error_rate);
+	parse_input(input_path + "day_16.txt", rules, my_ticket, tickets, error_rate);
 
 	std::cout << "Day 16 part 1 | Error rate: " << error_rate << '\n';
 }
 
-void day_16_part_2()
+void day_16_part_2(const std::string& input_path)
 {
 	std::vector<Rule> rules;
 	std::vector<int> my_ticket;
 	std::vector<std::vector<int>> tickets;
 	uint64_t error_rate = 0;
 
-	parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_16.txt", rules, my_ticket, tickets, error_rate);
+	parse_input(input_path + "day_16.txt", rules, my_ticket, tickets, error_rate);
 
 	// Fill possible index vector with true values
 	std::vector<std::vector<bool>> possible_indexes;

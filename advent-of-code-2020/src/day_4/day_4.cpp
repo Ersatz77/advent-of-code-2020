@@ -51,9 +51,9 @@ std::vector<Passport> create_passports(const std::string& path)
 	return passports;
 }
 
-void day_4_part_1()
+void day_4_part_1(const std::string& input_path)
 {
-	std::vector<Passport> passports = create_passports("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_4.txt");
+	std::vector<Passport> passports = create_passports(input_path + "day_4.txt");
 	
 	int valid_passports = 0;
 	for (const Passport& p : passports)
@@ -68,9 +68,9 @@ void day_4_part_1()
 	std::cout << "Day 4 part 1 | Number of valid passports: " << valid_passports << '\n';
 }
 
-void day_4_part_2()
+void day_4_part_2(const std::string& input_path)
 {
-	std::vector<Passport> passports = create_passports("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_4.txt");
+	std::vector<Passport> passports = create_passports(input_path + "day_4.txt");
 
 	int valid_passports = 0;
 	for (const Passport& p : passports)

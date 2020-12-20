@@ -101,9 +101,9 @@ int64_t chinese_remainder(const std::vector<int64_t>& n, const std::vector<int64
 	return sum % product;
 }
 
-void day_13_part_1()
+void day_13_part_1(const std::string& input_path)
 {
-	Schedule schedule = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_13.txt");
+	Schedule schedule = parse_input(input_path + "day_13.txt");
 
 	// Simulate busses
 	Bus earliest_bus{ -1, std::numeric_limits<int64_t>::max() };
@@ -127,9 +127,9 @@ void day_13_part_1()
 	std::cout << "Day 13 part 1 | Earliest bus: " << earliest_bus.id * (earliest_bus.time - schedule.earliest_depart_time) << '\n';
 }
 
-void day_13_part_2()
+void day_13_part_2(const std::string& input_path)
 {
-	Schedule schedule = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_13.txt");
+	Schedule schedule = parse_input(input_path + "day_13.txt");
 	
 	std::vector<int64_t> n;
 	std::vector<int64_t> a;

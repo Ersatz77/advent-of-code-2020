@@ -70,11 +70,11 @@ std::string generate_regex(const std::unordered_map<int, std::string>& rule_map,
 	return '(' + regex + ')';
 }
 
-void day_19_part_1()
+void day_19_part_1(const std::string& input_path)
 {
 	std::unordered_map<int, std::string> rule_map;
 	std::vector<std::string> messages;
-	parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_19.txt", rule_map, messages);
+	parse_input(input_path + "day_19.txt", rule_map, messages);
 
 	// Create regex from string
 	std::regex regex(generate_regex(rule_map, 0));
@@ -89,11 +89,11 @@ void day_19_part_1()
 	std::cout << "Day 19 part 1 | Number of messages that match rules: " << count << '\n';
 }
 
-void day_19_part_2()
+void day_19_part_2(const std::string& input_path)
 {
 	std::unordered_map<int, std::string> rule_map;
 	std::vector<std::string> messages;
-	parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_19.txt", rule_map, messages);
+	parse_input(input_path + "day_19.txt", rule_map, messages);
 
 	// Override rules in rule map :wtfix:
 	rule_map[8] = "42 +";

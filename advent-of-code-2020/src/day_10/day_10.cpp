@@ -29,9 +29,9 @@ std::vector<int> parse_input(const std::string& path)
 	return adapters;
 }
 
-void day_10_part_1()
+void day_10_part_1(const std::string& input_path)
 {
-	std::vector<int> adapters = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_10.txt");
+	std::vector<int> adapters = parse_input(input_path + "day_10.txt");
 	std::vector<int> diff(adapters.size());
 
 	std::adjacent_difference(adapters.begin(), adapters.end(), diff.begin());
@@ -42,9 +42,9 @@ void day_10_part_1()
 	std::cout << "Day 10 part 1 | Product of Jolt differences: " << diff_1 * diff_3 << '\n';
 }
 
-void day_10_part_2()
+void day_10_part_2(const std::string& input_path)
 {
-	std::vector<int> adapters = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_10.txt");
+	std::vector<int> adapters = parse_input(input_path + "day_10.txt");
 
 	std::vector<uint64_t> combinations(adapters.size());
 	combinations[0] = 1;

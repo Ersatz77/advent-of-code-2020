@@ -77,16 +77,16 @@ int num_trees_for_slope(const std::vector<Coord>& coords, int step_x, int step_y
 	return num_trees;
 }
 
-void day_3_part_1()
+void day_3_part_1(const std::string& input_path)
 {
-	std::vector<Coord> coords = create_coords("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_3.txt");
+	std::vector<Coord> coords = create_coords(input_path + "day_3.txt");
 
 	std::cout << "Day 3 part 1 | Number of trees in path: " << num_trees_for_slope(coords, 3, 1) << '\n';
 }
 
-void day_3_part_2()
+void day_3_part_2(const std::string& input_path)
 {
-	std::vector<Coord> coords = create_coords("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_3.txt");
+	std::vector<Coord> coords = create_coords(input_path + "day_3.txt");
 
 	int slope_1 = num_trees_for_slope(coords, 1, 1);
 	int slope_2 = num_trees_for_slope(coords, 3, 1);

@@ -114,9 +114,9 @@ void rotate_around(int& point_x, int& point_y, const int origin_x, const int ori
 	point_y = static_cast<int>(std::round(y2 + origin_y));
 }
 
-void day_12_part_1()
+void day_12_part_1(const std::string& input_path)
 {
-	std::vector<Instruction> instructions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_12.txt");
+	std::vector<Instruction> instructions = parse_input(input_path + "day_12.txt");
 
 	int x = 0;
 	int y = 0;
@@ -152,9 +152,9 @@ void day_12_part_1()
 	std::cout << "Day 12 part 1 | Manhattan distance: " << manhattan_distance(0, x, 0, y) << '\n';
 }
 
-void day_12_part_2()
+void day_12_part_2(const std::string& input_path)
 {
-	std::vector<Instruction> instructions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_12.txt");
+	std::vector<Instruction> instructions = parse_input(input_path + "day_12.txt");
 
 	int ship_x = 0;
 	int ship_y = 0;

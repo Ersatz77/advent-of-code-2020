@@ -72,9 +72,9 @@ std::vector<int> get_seat_ids(const std::string& path)
 	return seat_ids;
 }
 
-void day_5_part_1()
+void day_5_part_1(const std::string& input_path)
 {
-	std::vector<int> seat_ids = get_seat_ids("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_5.txt");
+	std::vector<int> seat_ids = get_seat_ids(input_path + "day_5.txt");
 
 	int highest_seat_id = std::numeric_limits<int>::min();
 	for (const int id : seat_ids)
@@ -88,9 +88,9 @@ void day_5_part_1()
 	std::cout << "Day 5 part 1 | Highest seat ID: " << highest_seat_id << '\n';
 }
 
-void day_5_part_2()
+void day_5_part_2(const std::string& input_path)
 {
-	std::vector<int> seat_ids = get_seat_ids("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_5.txt");
+	std::vector<int> seat_ids = get_seat_ids(input_path + "day_5.txt");
 
 	std::sort(seat_ids.begin(), seat_ids.end());
 
@@ -111,9 +111,9 @@ void day_5_part_2()
 	std::cout << "Day 5 part 2 | ID for our seat: " << seat << '\n';
 }
 
-void day_5_v2()
+void day_5_v2(const std::string& input_path)
 {
-	std::string path = "D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_5.txt";
+	std::string path = input_path + "day_5.txt";
 	std::ifstream file(path);
 	if (!file)
 	{

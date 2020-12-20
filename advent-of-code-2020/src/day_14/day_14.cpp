@@ -118,9 +118,9 @@ void mask_address(uint64_t address, const uint64_t value, std::string mask, std:
 	mask_address(address_2, value, mask, memory);
 }
 
-void day_14_part_1()
+void day_14_part_1(const std::string& input_path)
 {
-	std::vector<Docking_instruction> instructions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_14.txt");
+	std::vector<Docking_instruction> instructions = parse_input(input_path + "day_14.txt");
 
 	// Run program
 	std::unordered_map<uint64_t, uint64_t> memory;
@@ -148,9 +148,9 @@ void day_14_part_1()
 	std::cout << "Day 14 part 1 | Memory sum: " << sum << '\n';
 }
 
-void day_14_part_2()
+void day_14_part_2(const std::string& input_path)
 {
-	std::vector<Docking_instruction> instructions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_14.txt");
+	std::vector<Docking_instruction> instructions = parse_input(input_path + "day_14.txt");
 
 	// Run program
 	std::unordered_map<uint64_t, uint64_t> memory;

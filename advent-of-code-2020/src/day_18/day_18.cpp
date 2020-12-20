@@ -26,9 +26,9 @@ std::vector<std::string> parse_input(const std::string& path)
 	return expressions;
 }
 
-void day_18_part_1()
+void day_18_part_1(const std::string& input_path)
 {
-	std::vector<std::string> expressions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_18.txt");
+	std::vector<std::string> expressions = parse_input(input_path + "day_18.txt");
 	Calculator calc;
 
 	int64_t sum = 0;
@@ -40,9 +40,9 @@ void day_18_part_1()
 	std::cout << "Day 18 part 1 | Sum: " << sum << '\n';
 }
 
-void day_18_part_2()
+void day_18_part_2(const std::string& input_path)
 {
-	std::vector<std::string> expressions = parse_input("D:\\Repositories\\advent-of-code-2020\\advent-of-code-2020\\input\\day_18.txt");
+	std::vector<std::string> expressions = parse_input(input_path + "day_18.txt");
 	Calculator calc;
 
 	int64_t sum = 0;
