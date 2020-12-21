@@ -155,9 +155,26 @@ void day_20_part_2(const std::string& input_path)
 	std::for_each(image_tiles.begin(), image_tiles.end(), [](Tile& t) { t.trim_edges(); });
 
 	// Find sea monsters
+	uint64_t sea_monster_count = 0;
 	Image image(image_tiles, 12, 8);
-	image.flip_hoizontal();
-	uint64_t water_count = image.get_water_count() - image.get_sea_monster_count();
 
-	std::cout << "Day 20 part 2 | Number of water tiles without sea monsters: " <<  water_count  << '\n';
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+
+	image.flip_hoizontal();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+	image.rotate();
+	sea_monster_count += image.get_sea_monster_count();
+
+	std::cout << "Day 20 part 2 | Number of water tiles without sea monsters: " << image.get_water_count() - sea_monster_count << '\n';
 }
