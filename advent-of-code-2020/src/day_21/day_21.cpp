@@ -69,7 +69,7 @@ std::map<std::string, std::string> find_confirmed_allergens(std::map<std::string
 {
 	std::map<std::string, std::string> confirmed_allergens;
 
-	// Loop while any allergen has more than 1 ingredient
+	// Loop while any allergen's ingredient list isn't empty
 	while (std::any_of(allergen_map.begin(), allergen_map.end(), [](const auto& kv) { return !kv.second.empty(); }))
 	{
 		// Find allergen with only 1 ingredient
