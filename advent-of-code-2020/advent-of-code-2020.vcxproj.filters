@@ -117,6 +117,9 @@
     <ClCompile Include="src\day_20\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_22\day_22.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\day_21\day_21.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_22\day_22.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

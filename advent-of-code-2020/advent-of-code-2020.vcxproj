@@ -227,6 +227,7 @@
     <ClCompile Include="src\day_20\Image.cpp" />
     <ClCompile Include="src\day_20\Tile.cpp" />
     <ClCompile Include="src\day_21\day_21.cpp" />
+    <ClCompile Include="src\day_22\day_22.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
     <ClCompile Include="src\day_4\day_4.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="src\day_20\Image.h" />
     <ClInclude Include="src\day_20\Tile.h" />
     <ClInclude Include="src\day_21\day_21.h" />
+    <ClInclude Include="src\day_22\day_22.h" />
     <ClInclude Include="src\day_2\day_2.h" />
     <ClInclude Include="src\day_3\day_3.h" />
     <ClInclude Include="src\day_4\day_4.h" />
