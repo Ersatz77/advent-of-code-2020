@@ -111,10 +111,10 @@
     <ClCompile Include="src\day_20\Tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_20\image.cpp">
+    <ClCompile Include="src\day_21\day_21.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\day_21\day_21.cpp">
+    <ClCompile Include="src\day_20\Image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -224,7 +224,7 @@
     <ClCompile Include="src\day_19\day_19.cpp" />
     <ClCompile Include="src\day_1\day_1.cpp" />
     <ClCompile Include="src\day_20\day_20.cpp" />
-    <ClCompile Include="src\day_20\image.cpp" />
+    <ClCompile Include="src\day_20\Image.cpp" />
     <ClCompile Include="src\day_20\Tile.cpp" />
     <ClCompile Include="src\day_21\day_21.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
