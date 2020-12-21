@@ -54,9 +54,9 @@ uint64_t Image::get_sea_monster_count() const
 				window_3[1] == '#' && window_3[4] == '#' && window_3[7] == '#' && window_3[10] == '#' && window_3[13] == '#' && window_3[16] == '#'
 			)
 			{
-				std::cout << window_1 << '\n';
-				std::cout << window_2 << '\n';
-				std::cout << window_3 << "\n\n";
+				//std::cout << window_1 << '\n';
+				//std::cout << window_2 << '\n';
+				//std::cout << window_3 << "\n\n";
 				sea_monster_tiles += 15;
 			}
 		}
