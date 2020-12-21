@@ -108,6 +108,15 @@
     <ClCompile Include="src\day_20\day_20.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_20\Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_20\image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_21\day_21.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
@@ -200,6 +209,15 @@
     <ClInclude Include="src\day_9\day_9.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\day_20\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_20\Image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_21\day_21.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\day_1.txt" />
@@ -220,5 +238,6 @@
     <Text Include="input\day_17.txt" />
     <Text Include="input\day_18.txt" />
     <Text Include="input\day_19.txt" />
+    <Text Include="input\day_20.txt" />
   </ItemGroup>
 </Project>
