@@ -26,8 +26,8 @@ Image::Image(std::vector<Tile> image_tiles, const size_t image_tile_width, const
 
 // Initialize sea monster static member
 std::vector<std::string> Image::m_sea_monster = { "                  # ",
-						                          "#    ##    ##    ###", 
-	                                              " #  #  #  #  #  #   " };
+                                                  "#    ##    ##    ###", 
+                                                  " #  #  #  #  #  #   " };
 
 uint64_t Image::get_sea_monster_count() const
 {
