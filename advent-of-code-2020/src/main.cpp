@@ -23,6 +23,7 @@
 #include "day_20/day_20.h"
 #include "day_21/day_21.h"
 #include "day_22/day_22.h"
+#include "day_23/day_23.h"
 
 #include <iostream>
 #include <vector>
@@ -106,8 +107,11 @@ int main(int argc, char* argv[])
 		//day_21_part_1(input_path);
 		//day_21_part_2(input_path);
 
-		day_22_part_1(input_path);
-		day_22_part_2(input_path);
+		//day_22_part_1(input_path);
+		//day_22_part_2(input_path);
+
+		day_23_part_1(input_path);
+		day_23_part_2(input_path);
 	}
 	catch (std::exception& e)
 	{

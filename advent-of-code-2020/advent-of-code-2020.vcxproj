@@ -228,6 +228,8 @@
     <ClCompile Include="src\day_20\Tile.cpp" />
     <ClCompile Include="src\day_21\day_21.cpp" />
     <ClCompile Include="src\day_22\day_22.cpp" />
+    <ClCompile Include="src\day_22\Deck.cpp" />
+    <ClCompile Include="src\day_23\day_23.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
     <ClCompile Include="src\day_4\day_4.cpp" />
@@ -265,6 +267,8 @@
     <ClInclude Include="src\day_20\Tile.h" />
     <ClInclude Include="src\day_21\day_21.h" />
     <ClInclude Include="src\day_22\day_22.h" />
+    <ClInclude Include="src\day_22\Deck.h" />
+    <ClInclude Include="src\day_23\day_23.h" />
     <ClInclude Include="src\day_2\day_2.h" />
     <ClInclude Include="src\day_3\day_3.h" />
     <ClInclude Include="src\day_4\day_4.h" />
@@ -292,6 +296,9 @@
     <Text Include="input\day_19.txt" />
     <Text Include="input\day_2.txt" />
     <Text Include="input\day_20.txt" />
+    <Text Include="input\day_20_grid_with_borders.txt" />
+    <Text Include="input\day_21.txt" />
+    <Text Include="input\day_22.txt" />
     <Text Include="input\day_3.txt" />
     <Text Include="input\day_4.txt" />
     <Text Include="input\day_5.txt" />
