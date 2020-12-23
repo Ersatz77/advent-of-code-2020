@@ -126,6 +126,12 @@
     <ClCompile Include="src\day_23\day_23.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\day_23\Cup_game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day_24\day_24.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\day_4\Passport.h">
@@ -234,6 +240,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\day_23\day_23.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_23\Cup_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day_24\day_24.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
