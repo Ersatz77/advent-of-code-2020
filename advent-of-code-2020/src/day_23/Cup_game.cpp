@@ -85,7 +85,7 @@ std::string Cup_game::to_string() const
 int64_t Cup_game::cups_after_one() const
 {
 	int64_t product = 1;
-	std::list<int>::const_iterator it = std::find(m_cups.begin(), m_cups.end(), 1);
+	const std::list<int>::const_iterator it = std::find(m_cups.begin(), m_cups.end(), 1);
 	product *= *(std::next(it, 1));
 	product *= *(std::next(it, 2));
 
