@@ -34,7 +34,7 @@ public:
 private:
 	std::string m_name;
 
-	// Deck is reversed. index 0 is actually the bottom of the card.
+	// Deck is reversed. index 0 is actually the bottom of the deck.
 	std::vector<int> m_cards;
 };
 
