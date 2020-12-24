@@ -232,6 +232,9 @@
     <ClCompile Include="src\day_23\Cup_game.cpp" />
     <ClCompile Include="src\day_23\day_23.cpp" />
     <ClCompile Include="src\day_24\day_24.cpp" />
+    <ClCompile Include="src\day_24\Floor.cpp" />
+    <ClCompile Include="src\day_24\Hex_tile.cpp" />
+    <ClCompile Include="src\day_25\day_25.cpp" />
     <ClCompile Include="src\day_2\day_2.cpp" />
     <ClCompile Include="src\day_3\day_3.cpp" />
     <ClCompile Include="src\day_4\day_4.cpp" />
@@ -273,6 +276,9 @@
     <ClInclude Include="src\day_23\Cup_game.h" />
     <ClInclude Include="src\day_23\day_23.h" />
     <ClInclude Include="src\day_24\day_24.h" />
+    <ClInclude Include="src\day_24\Floor.h" />
+    <ClInclude Include="src\day_24\Hex_tile.h" />
+    <ClInclude Include="src\day_25\day_25.h" />
     <ClInclude Include="src\day_2\day_2.h" />
     <ClInclude Include="src\day_3\day_3.h" />
     <ClInclude Include="src\day_4\day_4.h" />
@@ -303,6 +309,7 @@
     <Text Include="input\day_20_grid_with_borders.txt" />
     <Text Include="input\day_21.txt" />
     <Text Include="input\day_22.txt" />
+    <Text Include="input\day_24.txt" />
     <Text Include="input\day_3.txt" />
     <Text Include="input\day_4.txt" />
     <Text Include="input\day_5.txt" />
