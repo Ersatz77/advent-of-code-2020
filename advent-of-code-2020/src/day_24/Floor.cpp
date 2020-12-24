@@ -2,7 +2,6 @@
 
 #include "Hex_tile.h"
 
-#include <iostream>
 #include <string>
 #include <vector>
 #include <unordered_set>
@@ -71,8 +70,8 @@ std::vector<Hex_tile> Floor::get_adjacent(const Hex_tile& center) const
 		int r = center.r;
 
 		int is_odd = r & 1;
-		q += m_deltas[is_odd][static_cast<size_t>(i)][0];
-		r += m_deltas[is_odd][static_cast<size_t>(i)][1];
+		q += m_deltas[is_odd][i][0];
+		r += m_deltas[is_odd][i][1];
 
 		adjacent.push_back(Hex_tile{ q, r });
 	}
