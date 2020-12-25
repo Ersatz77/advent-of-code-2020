@@ -46,77 +46,77 @@ int main(int argc, char* argv[])
 
 	try
 	{
-		//day_1_part_1(input_path);
-		//day_1_part_2(input_path);
+		day_1_part_1(input_path);
+		day_1_part_2(input_path);
 
-		//day_2_part_1(input_path);
-		//day_2_part_2(input_path);
+		day_2_part_1(input_path);
+		day_2_part_2(input_path);
 
-		//day_3_part_1(input_path);
-		//day_3_part_2(input_path);
+		day_3_part_1(input_path);
+		day_3_part_2(input_path);
 
-		//day_4_part_1(input_path);
-		//day_4_part_2(input_path);
+		day_4_part_1(input_path);
+		day_4_part_2(input_path);
 
-		//day_5_part_1(input_path);
-		//day_5_part_2(input_path);
+		day_5_part_1(input_path);
+		day_5_part_2(input_path);
 
-		//day_6_part_1(input_path);
-		//day_6_part_2(input_path);
+		day_6_part_1(input_path);
+		day_6_part_2(input_path);
 
-		//day_7_part_1(input_path);
-		//day_7_part_2(input_path);
+		day_7_part_1(input_path);
+		day_7_part_2(input_path);
 
-		//day_8_part_1(input_path);
-		//day_8_part_2(input_path);
+		day_8_part_1(input_path);
+		day_8_part_2(input_path);
 
-		//day_9_part_1(input_path);
-		//day_9_part_2(input_path);
+		day_9_part_1(input_path);
+		day_9_part_2(input_path);
 
-		//day_10_part_1(input_path);
-		//day_10_part_2(input_path);
+		day_10_part_1(input_path);
+		day_10_part_2(input_path);
 
-		//day_11_part_1(input_path);
-		//day_11_part_2(input_path);
+		day_11_part_1(input_path);
+		day_11_part_2(input_path);
 
-		//day_12_part_1(input_path);
-		//day_12_part_2(input_path);
+		day_12_part_1(input_path);
+		day_12_part_2(input_path);
 
-		//day_13_part_1(input_path);
-		//day_13_part_2(input_path);
+		day_13_part_1(input_path);
+		day_13_part_2(input_path);
 
-		//day_14_part_1(input_path);
-		//day_14_part_2(input_path);
+		day_14_part_1(input_path);
+		day_14_part_2(input_path);
 
-		//day_15_part_1(input_path);
-		//day_15_part_2(input_path);
+		day_15_part_1(input_path);
+		day_15_part_2(input_path);
 
-		//day_16_part_1(input_path);
-		//day_16_part_2(input_path);
+		day_16_part_1(input_path);
+		day_16_part_2(input_path);
 
-		//day_17_part_1(input_path);
-		//day_17_part_2(input_path);
+		day_17_part_1(input_path);
+		day_17_part_2(input_path);
 
-		//day_18_part_1(input_path);
-		//day_18_part_2(input_path);
+		day_18_part_1(input_path);
+		day_18_part_2(input_path);
 
-		//day_19_part_1(input_path);
-		//day_19_part_2(input_path);
+		day_19_part_1(input_path);
+		day_19_part_2(input_path);
 
-		//day_20_part_1(input_path);
-		//day_20_part_2(input_path);
+		day_20_part_1(input_path);
+		day_20_part_2(input_path);
 
-		//day_21_part_1(input_path);
-		//day_21_part_2(input_path);
+		day_21_part_1(input_path);
+		day_21_part_2(input_path);
 
-		//day_22_part_1(input_path);
-		//day_22_part_2(input_path);
+		day_22_part_1(input_path);
+		day_22_part_2(input_path);
 
-		//day_23_part_1(input_path);
-		//day_23_part_2(input_path);
+		day_23_part_1(input_path);
+		day_23_part_2(input_path);
 
-		//day_24_part_1(input_path);
-		//day_24_part_2(input_path);
+		day_24_part_1(input_path);
+		day_24_part_2(input_path);
 
 		day_25_part_1(input_path);
 		day_25_part_2(input_path);
