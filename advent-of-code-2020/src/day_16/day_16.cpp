@@ -193,20 +193,20 @@ void day_16_part_2(const std::string& input_path)
 	}
 
 	// Narrow down possibilities until we have all rules with only 1 index with true
-	int rules_With_one_index = 0;
-	while (rules_With_one_index < possible_indexes.size())
+	int rules_with_one_index = 0;
+	while (rules_with_one_index < possible_indexes.size())
 	{
 		//std::for_each(possible_indexes.begin(), possible_indexes.end(), [](const std::vector<bool>& idx) { for (const bool b : idx) { std::cout << b << ' '; } std::cout << "\n"; });
 		//std::cout << "===============================================================\n";
 
-		rules_With_one_index = 0;
+		rules_with_one_index = 0;
 		for (size_t i = 0; i < possible_indexes.size(); ++i)
 		{
 			// Check if this rule would only have one index
 			if (std::count(possible_indexes[i].begin(), possible_indexes[i].end(), true) == 1)
 			{
 				// Increment the count for rules with one index
-				++rules_With_one_index;
+				++rules_with_one_index;
 
 				// Get the index what has the only true value
 				size_t index = std::distance(possible_indexes[i].begin(), std::find(possible_indexes[i].begin(), possible_indexes[i].end(), true));
